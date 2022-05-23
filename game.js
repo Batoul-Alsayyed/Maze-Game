@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded",function(){
     score = 0;
     document.getElementById("status").innerHTML = "The game started!";
     item = document.getElementsByClassName("boundary example");
-
+    item[0].style.backgroundColor = 'white';
     item[0].innerHTML = "Score = "+score;
 
   };
