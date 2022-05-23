@@ -148,7 +148,8 @@ document.addEventListener("DOMContentLoaded",function(){
         }
     }
 
-  
+
+  //Adding best time stat
   const best = document.createElement("H1");
   const best_text = document.createTextNode("Best: ");
   best.appendChild(best_text);
@@ -164,7 +165,23 @@ document.addEventListener("DOMContentLoaded",function(){
   best_score_tens.appendChild(tens_text);
   document.body.appendChild(best_score_tens);
 
+  //Adding LAst time stat
 
+  const last = document.createElement("H1");
+  const last_text = document.createTextNode("Last: ");
+  last.appendChild(last_text);
+  document.body.appendChild(last);
+
+  const last_score_seconds  = document.createElement("H1");
+  const seconds_textlast = document.createTextNode("00 ");
+  last_score_seconds .appendChild(seconds_textlast);
+  document.body.appendChild(last_score_seconds );
+
+  const last_score_tens   = document.createElement("H1");
+  const tens_textlast = document.createTextNode("00 ");
+  last_score_tens.appendChild(tens_textlast);
+  document.body.appendChild(last_score_tens);
+  
   
 });
 
