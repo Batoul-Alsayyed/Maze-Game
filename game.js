@@ -147,6 +147,25 @@ document.addEventListener("DOMContentLoaded",function(){
             OutputSeconds.innerHTML = seconds;
         }
     }
+
+  
+  const best = document.createElement("H1");
+  const best_text = document.createTextNode("Best: ");
+  best.appendChild(best_text);
+  document.body.appendChild(best);
+
+  const best_score_seconds  = document.createElement("H1");
+  const seconds_text = document.createTextNode("00 ");
+  best_score_seconds .appendChild(seconds_text);
+  document.body.appendChild(best_score_seconds );
+
+  const best_score_tens   = document.createElement("H1");
+  const tens_text = document.createTextNode("00 ");
+  best_score_tens.appendChild(tens_text);
+  document.body.appendChild(best_score_tens);
+
+
+  
 });
 
   
