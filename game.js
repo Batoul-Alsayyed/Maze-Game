@@ -2,6 +2,11 @@ document.addEventListener("DOMContentLoaded",function(){
   let score = 0;
   // variable to indicate that the game started and set false by default 
   let start = false
+  var Interval;
+
+  var seconds = 00;
+  var tens = 00;
+
   document.getElementById("start").onclick = function(){clicked()};
   
   function clicked(){
@@ -12,6 +17,8 @@ document.addEventListener("DOMContentLoaded",function(){
     item[0].style.backgroundColor = 'white';
     item[0].innerHTML = "Score = "+score;
 
+    clearInterval(Interval);
+    Interval = setInterval(startTimer, 10);  // millisecond 10 = 0.01 second
   };
 
   list = document.getElementsByClassName("boundary");
@@ -91,28 +98,47 @@ document.addEventListener("DOMContentLoaded",function(){
     }
   }
   
-  const e = document.createElement('div');
-  e.innerHTML = 'Time Stats: \n' 
-  
-  var t = document.createTextNode('Live ');
-  e.appendChild(t); 
+  e1 = document.querySelector("p").innerText = 'Time stats: '
+  document.querySelector("p").style.textAlign = 'center'
 
-  e.style.alignContent = 'center'
-  e.style.marginLeft = '45%'
-  
-  var textnode = document.createTextNode('0:0  ');
-  e.appendChild(textnode); 
-  var last = document.createTextNode('Last: ');
-  e.appendChild(last); 
-  var last_time = document.createTextNode('0:0  ');
-  e.appendChild(last_time); 
-  var Best = document.createTextNode('Best: ');
-  e.appendChild(Best); 
-  var best_time = document.createTextNode('0:0');
-  e.appendChild(best_time); 
 
-  document.body.appendChild(e);
+  const h1 = document.createElement("H1");
+  const textNode = document.createTextNode("Live: ");
+  h1.appendChild(textNode);
+  document.body.appendChild(h1);
 
+  const OutputSeconds  = document.createElement("H1");
+  const textNode2 = document.createTextNode("00 ");
+  OutputSeconds .appendChild(textNode2);
+  document.body.appendChild(OutputSeconds );
+
+  const OutputTens   = document.createElement("H1");
+  const textNode3 = document.createTextNode("00 ");
+  OutputTens.appendChild(textNode3);
+  document.body.appendChild(OutputTens);
+
+  //OutputTens.innerHTML+="hryyyyyyyyyyyyyyyyyy"
+    function startTimer(){
+        tens++;
+        if(tens <= 9){
+            OutputTens.innerHTML = "0" + tens;
+        }
+
+        if(tens > 9){
+            OutputTens.innerHTML = tens;
+        }
+
+        if(tens > 99){
+            seconds++;
+            OutputSeconds.innerHTML = "0" + seconds;
+            tens = 0;
+            OutputTens.innerHTML = "0" + 0;
+        }
+
+        if(seconds > 9){
+            OutputSeconds.innerHTML = seconds;
+        }
+    }
 });
 
   
