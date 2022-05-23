@@ -90,6 +90,29 @@ document.addEventListener("DOMContentLoaded",function(){
     
     }
   }
+  
+  const e = document.createElement('div');
+  e.innerHTML = 'Time Stats: \n' 
+  
+  var t = document.createTextNode('Live ');
+  e.appendChild(t); 
+
+  e.style.alignContent = 'center'
+  e.style.marginLeft = '45%'
+  
+  var textnode = document.createTextNode('0:0  ');
+  e.appendChild(textnode); 
+  var last = document.createTextNode('Last: ');
+  e.appendChild(last); 
+  var last_time = document.createTextNode('0:0  ');
+  e.appendChild(last_time); 
+  var Best = document.createTextNode('Best: ');
+  e.appendChild(Best); 
+  var best_time = document.createTextNode('0:0');
+  e.appendChild(best_time); 
+
+  document.body.appendChild(e);
+
 });
 
   
