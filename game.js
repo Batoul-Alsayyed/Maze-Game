@@ -95,6 +95,14 @@ document.addEventListener("DOMContentLoaded",function(){
       console.log(score);
       item[0].style.backgroundColor = 'yellow';
     
+
+      //reset timer 
+
+      clearInterval(Interval);
+      tens = "00";
+      seconds = "00";
+      OutputSeconds.innerHTML = seconds;
+      OutputTens.innerHTML = tens;
     }
   }
   
