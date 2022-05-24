@@ -108,9 +108,21 @@ document.addEventListener("DOMContentLoaded",function(){
       seconds_timer.push(seconds)
       tens_timer.push(tens)
       
-      //
+      //saving last time stat
       last_score_seconds.innerHTML = seconds
       last_score_tens.innerHTML = tens
+
+      //adding best time stat(least)
+      min_seconds = seconds_timer[0]
+      min_tens = tens_timer[0]
+      for (var i=0; i<seconds_timer.length; i++){
+        if (seconds_timer[i]<min_seconds && tens_timer[i]<min_tens){
+          min_seconds= seconds_timer;
+          min_tens = tens_timer[i]
+        }
+      }
+      best_score_seconds.innerHTML = min_seconds
+      best_score_tens.innerHTML = min_tens
       
       clearInterval(Interval);
       tens = "00";
