@@ -12,6 +12,33 @@ document.addEventListener("DOMContentLoaded",function(){
     //array that will store tens timer
 
   var tens_timer = [] 
+  
+  // right click listener for start button
+  document.getElementById("start").addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+      //reset timer 
+      //saving seconds and tens values to save them 
+
+      seconds_timer.push(seconds)
+      tens_timer.push(tens)
+      
+      //saving last time stat
+      last_score_seconds.innerHTML = seconds
+      last_score_tens.innerHTML = tens
+
+      //resetting best time stat(least)
+      
+      best_score_seconds.innerHTML = "00"
+      best_score_tens.innerHTML = "00"
+
+      clearInterval(Interval);
+      tens = "00";
+      seconds = "00";
+      OutputSeconds.innerHTML = seconds;
+      OutputTens.innerHTML = tens;
+  }, false);
+
+
 
   document.getElementById("start").onclick = function(){clicked()};
   
@@ -123,7 +150,7 @@ document.addEventListener("DOMContentLoaded",function(){
       }
       best_score_seconds.innerHTML = min_seconds
       best_score_tens.innerHTML = min_tens
-      
+
       clearInterval(Interval);
       tens = "00";
       seconds = "00";
