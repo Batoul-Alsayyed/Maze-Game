@@ -7,6 +7,12 @@ document.addEventListener("DOMContentLoaded",function(){
   var seconds = 00;
   var tens = 00;
 
+  //array that will store seconds timer
+  var seconds_timer = [] 
+    //array that will store tens timer
+
+  var tens_timer = [] 
+
   document.getElementById("start").onclick = function(){clicked()};
   
   function clicked(){
@@ -97,12 +103,22 @@ document.addEventListener("DOMContentLoaded",function(){
     
 
       //reset timer 
+      //saving seconds and tens values to save them 
 
+      seconds_timer.push(seconds)
+      tens_timer.push(tens)
+      
+      //
+      last_score_seconds.innerHTML = seconds
+      last_score_tens.innerHTML = tens
+      
       clearInterval(Interval);
       tens = "00";
       seconds = "00";
       OutputSeconds.innerHTML = seconds;
       OutputTens.innerHTML = tens;
+
+      
     }
   }
   
